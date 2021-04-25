@@ -5,7 +5,7 @@ const myMSALObj = new msal.PublicClientApplication(msalConfig);
 let username = "";
 
 function selectAccount() {
-
+    console.log("inside select account");
     /**
      * See here for more info on account retrieval: 
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
@@ -18,6 +18,7 @@ function selectAccount() {
         // Add choose account code here
         console.warn("Multiple accounts detected.");
     } else if (currentAccounts.length === 1) {
+        console.log("inside third else if select account");
         username = currentAccounts[0].username;
         showWelcomeMessage(username);
     }
@@ -29,8 +30,10 @@ function handleResponse(response) {
      * To see the full list of response object properties, visit:
      * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#response
      */
+    console.log("inside handle response");
     console.log(response);
     console.log("inside handle response");
+    //console.log(response.idToken);// this prints the token
     console.log("idTokenClaims--> "+ response.idTokenClaims);
     console.log("name--> "+ response.account.name);
     console.log("user name--> "+ response.account.username);

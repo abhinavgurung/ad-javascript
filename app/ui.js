@@ -7,6 +7,7 @@ const profileButton = document.getElementById("seeProfile");
 const profileDiv = document.getElementById("profile-div");
 
 function showWelcomeMessage(username) {
+    console.log("inside show welcome message in ui.js");
     // Reconfiguring DOM elements
     cardDiv.style.display = 'initial';
     welcomeDiv.innerHTML = `Welcome ${username}`;
